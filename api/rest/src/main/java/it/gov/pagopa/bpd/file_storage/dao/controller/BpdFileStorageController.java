@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 
 
 @Api(tags = "Bonus Pagamenti Digitali File Storage Controller")
-@RequestMapping("/bpd/file-storage")
+@RequestMapping("/bpd")
 public interface BpdFileStorageController {
 
     @RequestMapping(value = "/tc", method = RequestMethod.GET, produces = MediaType.APPLICATION_PDF_VALUE)
