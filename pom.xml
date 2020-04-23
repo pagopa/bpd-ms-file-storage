@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.gov.pagopa.bpd.ms</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <artifactId>bpd-ms-starter-parent</artifactId>
+    </parent>
+
+    <artifactId>bpd-ms-file-storage</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>it.gov.pagopa.bpd.ms.file_storage.integration</groupId>
+                <artifactId>bpd-ms-file-storage-integration-jpa</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gov.pagopa.bpd.ms.file_storage</groupId>
+                <artifactId>bpd-ms-file-storage-core</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gov.pagopa.bpd.ms.file_storage.api</groupId>
+                <artifactId>bpd-ms-file-storage-api-rest</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gov.pagopa.bpd.commons.api</groupId>
+                <artifactId>bpd-commons-api-rest</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gov.pagopa.bpd.commons</groupId>
+                <artifactId>bpd-commons-core</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gov.pagopa.bpd.commons.integration</groupId>
+                <artifactId>bpd-commons-integration-jpa</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gov.pagopa.bpd.commons.integration</groupId>
+                <artifactId>bpd-commons-integration-jpa</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!--    TODO: use only inside modules that use it-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.projectlombok</groupId>-->
+        <!--            <artifactId>lombok</artifactId>-->
+        <!--            <optional>true</optional>-->
+        <!--            <version>1.18.10</version>-->
+        <!--        </dependency>-->
+        <!--        TODO: enable only if required-->
+        <!--        <dependency>-->
+        <!--            <groupId>it.gov.pagopa.bpd</groupId>-->
+        <!--            <artifactId>bpd-schema</artifactId>-->
+        <!--            <version>1.0-SNAPSHOT</version>-->
+        <!--        </dependency>-->
+    </dependencies>
+
+    <!--        TODO: spring-boot-maven-plugin have to be used only inside App module-->
+    <!--    <build>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.springframework.boot</groupId>-->
+    <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+    <!--                <configuration>-->
+    <!--                    <skip>true</skip>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
+    <modules>
+        <module>app</module>
+        <module>core</module>
+        <module>integration</module>
+        <module>api</module>
+    </modules>
+</project>
