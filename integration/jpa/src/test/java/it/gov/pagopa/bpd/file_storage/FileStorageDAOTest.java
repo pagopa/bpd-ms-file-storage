@@ -4,6 +4,8 @@ import eu.sia.meda.layers.connector.query.CriteriaQuery;
 import it.gov.pagopa.bpd.common.BaseCrudJpaDAOTest;
 import it.gov.pagopa.bpd.file_storage.model.FileStorage;
 import lombok.Data;
+import org.junit.Assert;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.OffsetDateTime;
@@ -12,7 +14,7 @@ import java.util.function.Function;
 public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileStorage, Long> {
 
     @Autowired
-    private FileStorageDAO fileStorageDAO;
+    private FileStorageDAO fileStorageDAOMock;
 
     @Override
     protected CriteriaQuery<? super FileStorage> getMatchAlreadySavedCriteria() {
@@ -24,7 +26,7 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
 
     @Override
     protected FileStorageDAO getCitizenDAO() {
-        return fileStorageDAO;
+        return fileStorageDAOMock;
     }
 
     @Override
@@ -47,8 +49,29 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
         return (bias) -> null;
     }
 
+    @Test
+    public void getFile_ok() {
+        OffsetDateTime startDate = getStoredEntity().getStartDate();
+        String type = getStoredEntity().getType();
+        final FileStorage entity = fileStorageDAOMock.getFile(startDate, type);
+
+        Assert.assertNotNull(entity);
+        Assert.assertEquals(getStoredEntity(), entity);
+    }
+
+    @Test
+    public void getFile_ko() {
+        OffsetDateTime endDate = getStoredEntity().getEndDate();
+        String type = getStoredEntity().getType();
+        final FileStorage entity = fileStorageDAOMock.getFile(endDate, type);
+
+        Assert.assertNotNull(entity);
+        Assert.assertEquals(getStoredEntity(), entity);
+    }
+
     @Data
     private static class FileStorageCriteria implements CriteriaQuery<FileStorage> {
         private Long id;
     }
+
 }

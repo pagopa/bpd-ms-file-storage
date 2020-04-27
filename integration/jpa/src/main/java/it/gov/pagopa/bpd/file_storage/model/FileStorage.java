@@ -1,6 +1,7 @@
 package it.gov.pagopa.bpd.file_storage.model;
 
 
+import it.gov.pagopa.bpd.common.model.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ import java.time.OffsetDateTime;
 @NoArgsConstructor
 @EqualsAndHashCode(of = {"id"}, callSuper = false)
 @Table(name = "bpd_file_storage")
-public class FileStorage implements Serializable {
+public class FileStorage extends BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
