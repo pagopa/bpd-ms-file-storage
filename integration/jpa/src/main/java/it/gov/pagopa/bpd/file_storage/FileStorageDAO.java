@@ -16,8 +16,8 @@ import java.time.OffsetDateTime;
 public interface FileStorageDAO extends CrudJpaDAO<FileStorage, Long> {
     @Query(value = "select fs " +
             "from FileStorage fs " +
-            "where :todayDate between " +
-            "fs.startDate and fs.endDate " +
+            "where fs.startDate <= :todayDate " +
+            "and fs.endDate is null " +
             "and fs.type = :type"
     )
     FileStorage getFile(@Param("todayDate") OffsetDateTime todayDate, String type);

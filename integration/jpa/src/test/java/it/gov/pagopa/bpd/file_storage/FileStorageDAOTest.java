@@ -53,6 +53,7 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
     public void getFile_ok() {
         OffsetDateTime startDate = getStoredEntity().getStartDate();
         String type = getStoredEntity().getType();
+        getStoredEntity().setEndDate(null);
         final FileStorage entity = fileStorageDAOMock.getFile(startDate, type);
 
         Assert.assertNotNull(entity);
@@ -65,8 +66,8 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
         String type = getStoredEntity().getType();
         final FileStorage entity = fileStorageDAOMock.getFile(endDate, type);
 
-        Assert.assertNotNull(entity);
-        Assert.assertEquals(getStoredEntity(), entity);
+        Assert.assertNull(entity);
+        Assert.assertNotEquals(getStoredEntity(), entity);
     }
 
     @Data
