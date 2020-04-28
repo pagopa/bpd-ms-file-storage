@@ -18,12 +18,7 @@
             <artifactId>bpd-ms-file-storage-api-rest</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>it.gov.pagopa.bpd.ms.file_storage.api</groupId>-->
-        <!--            <artifactId>bpd-ms-file-storage-app-api-listener</artifactId>-->
-        <!--            <version>${symbol_dollar}{bpd.file-storage.version}</version>-->
-        <!--            <scope>runtime</scope>-->
-        <!--        </dependency>-->
+
     </dependencies>
 
     <build>

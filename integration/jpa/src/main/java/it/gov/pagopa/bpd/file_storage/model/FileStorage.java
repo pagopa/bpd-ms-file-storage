@@ -11,6 +11,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
 
+/**
+ * See {@link it.gov.pagopa.bpd.file_storage.FileStorageDAO}
+ */
 @Entity
 @Data
 @NoArgsConstructor

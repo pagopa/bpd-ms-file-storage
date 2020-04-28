@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.time.OffsetDateTime;
 
+/**
+ * Data Access Object to manage all CRUD operations to the database
+ */
 @Repository
 public interface FileStorageDAO extends CrudJpaDAO<FileStorage, Long> {
     @Query(value = "select fs " +

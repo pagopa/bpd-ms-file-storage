@@ -1,4 +1,4 @@
-package it.gov.pagopa.bpd.file_storage.command;
+package it.gov.pagopa.bpd.file_storage.service;
 
 import it.gov.pagopa.bpd.file_storage.FileStorageDAO;
 import it.gov.pagopa.bpd.file_storage.model.FileStorage;

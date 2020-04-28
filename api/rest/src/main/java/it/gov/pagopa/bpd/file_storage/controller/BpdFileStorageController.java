@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.io.FileNotFoundException;
 
-
+/**
+ * Controller to expose MicroService
+ */
 @Api(tags = "Bonus Pagamenti Digitali File Storage Controller")
 @RequestMapping("/bpd")
 public interface BpdFileStorageController {

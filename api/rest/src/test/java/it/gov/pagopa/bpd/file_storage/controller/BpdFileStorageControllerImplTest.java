@@ -2,8 +2,8 @@ package it.gov.pagopa.bpd.file_storage.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.sia.meda.config.ArchConfiguration;
-import it.gov.pagopa.bpd.file_storage.command.FileStorageService;
 import it.gov.pagopa.bpd.file_storage.model.FileStorage;
+import it.gov.pagopa.bpd.file_storage.service.FileStorageService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -50,7 +50,7 @@ public class BpdFileStorageControllerImplTest {
     @Test
     public void tcReport() throws Exception {
 
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/bpd/file-storage/tc")
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/bpd/tc")
                 .contentType(MediaType.APPLICATION_PDF_VALUE)
                 .accept(MediaType.APPLICATION_PDF_VALUE))
                 .andExpect(MockMvcResultMatchers.status().is2xxSuccessful())

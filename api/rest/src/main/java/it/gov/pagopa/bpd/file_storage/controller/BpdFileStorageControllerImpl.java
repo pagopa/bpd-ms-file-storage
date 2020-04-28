@@ -1,8 +1,8 @@
 package it.gov.pagopa.bpd.file_storage.controller;
 
 import eu.sia.meda.core.controller.StatelessController;
-import it.gov.pagopa.bpd.file_storage.command.FileStorageService;
 import it.gov.pagopa.bpd.file_storage.model.FileStorage;
+import it.gov.pagopa.bpd.file_storage.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.ByteArrayInputStream;
 import java.time.OffsetDateTime;
 
+/**
+ * See {@link BpdFileStorageController}
+ */
 @RestController
 public class BpdFileStorageControllerImpl extends StatelessController implements BpdFileStorageController {
 
