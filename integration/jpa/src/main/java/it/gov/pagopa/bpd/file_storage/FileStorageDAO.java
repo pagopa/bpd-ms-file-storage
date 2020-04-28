@@ -17,7 +17,7 @@ public interface FileStorageDAO extends CrudJpaDAO<FileStorage, Long> {
     @Query(value = "select fs " +
             "from FileStorage fs " +
             "where fs.startDate <= :todayDate " +
-            "and fs.endDate is null " +
+            "and (fs.endDate is null or fs.endDate > :todayDate)" +
             "and fs.type = :type"
     )
     FileStorage getFile(@Param("todayDate") OffsetDateTime todayDate, String type);
