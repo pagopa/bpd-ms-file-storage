@@ -50,11 +50,11 @@ public class FileStorageServiceImplTest {
 
     @Test(expected = FileStorageNotFoundException.class)
     public void getFile_KO() {
-        FileStorage file = new FileStorage();
-        file.setEndDate(END_DATE);
-        file = fileStorageServiceMock.getFile(END_DATE, "prova");
+        FileStorage koFile = new FileStorage();
+        koFile.setEndDate(END_DATE);
+        koFile = fileStorageServiceMock.getFile(OffsetDateTime.now(), "prova");
 
-        Assert.assertNull(file);
+        Assert.assertNull(koFile);
         BDDMockito.verify(fileStorageDAOMock).getFile(DATE, "prova");
     }
 }

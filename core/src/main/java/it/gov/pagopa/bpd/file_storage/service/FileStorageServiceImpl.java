@@ -27,8 +27,9 @@ class FileStorageServiceImpl extends BaseService implements FileStorageService {
 
     @Override
     public FileStorage getFile(OffsetDateTime todayDate, String type) {
-        if ((fileStorageDAO.getFile(todayDate, type)) != null) {
-            return fileStorageDAO.getFile(todayDate, type);
+        FileStorage file = fileStorageDAO.getFile(todayDate, type);
+        if (file != null) {
+            return file;
         } else throw new FileStorageNotFoundException(type);
     }
 }
