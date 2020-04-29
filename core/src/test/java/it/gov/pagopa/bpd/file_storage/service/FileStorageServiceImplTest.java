@@ -1,6 +1,7 @@
 package it.gov.pagopa.bpd.file_storage.service;
 
 import it.gov.pagopa.bpd.file_storage.FileStorageDAO;
+import it.gov.pagopa.bpd.file_storage.exception.FileStorageNotFoundException;
 import it.gov.pagopa.bpd.file_storage.model.FileStorage;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,7 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
 import org.mockito.Mockito;
-import org.mockito.exceptions.verification.junit.ArgumentsAreDifferent;
 import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,6 +21,7 @@ import java.time.OffsetDateTime;
 @ContextConfiguration(classes = FileStorageServiceImpl.class)
 public class FileStorageServiceImplTest {
 
+    private final OffsetDateTime END_DATE = OffsetDateTime.now();
     private final OffsetDateTime DATE = OffsetDateTime.now();
 
     @MockBean
@@ -47,9 +48,11 @@ public class FileStorageServiceImplTest {
         BDDMockito.verify(fileStorageDAOMock).getFile(DATE, "prova");
     }
 
-    @Test(expected = ArgumentsAreDifferent.class)
+    @Test(expected = FileStorageNotFoundException.class)
     public void getFile_KO() {
-        FileStorage file = fileStorageServiceMock.getFile(OffsetDateTime.parse("1970-01-01T00:00:00.000Z"), "prova");
+        FileStorage file = new FileStorage();
+        file.setEndDate(END_DATE);
+        file = fileStorageServiceMock.getFile(END_DATE, "prova");
 
         Assert.assertNull(file);
         BDDMockito.verify(fileStorageDAOMock).getFile(DATE, "prova");

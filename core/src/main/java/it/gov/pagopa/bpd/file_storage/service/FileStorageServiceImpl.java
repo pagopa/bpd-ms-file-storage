@@ -1,6 +1,9 @@
 package it.gov.pagopa.bpd.file_storage.service;
 
+
+import eu.sia.meda.service.BaseService;
 import it.gov.pagopa.bpd.file_storage.FileStorageDAO;
+import it.gov.pagopa.bpd.file_storage.exception.FileStorageNotFoundException;
 import it.gov.pagopa.bpd.file_storage.model.FileStorage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +16,7 @@ import java.time.OffsetDateTime;
  */
 @Service
 @Slf4j
-class FileStorageServiceImpl implements FileStorageService {
+class FileStorageServiceImpl extends BaseService implements FileStorageService {
 
     private final FileStorageDAO fileStorageDAO;
 
@@ -24,6 +27,8 @@ class FileStorageServiceImpl implements FileStorageService {
 
     @Override
     public FileStorage getFile(OffsetDateTime todayDate, String type) {
-        return fileStorageDAO.getFile(todayDate, type);
+        if ((fileStorageDAO.getFile(todayDate, type)) != null) {
+            return fileStorageDAO.getFile(todayDate, type);
+        } else throw new FileStorageNotFoundException(type);
     }
 }
