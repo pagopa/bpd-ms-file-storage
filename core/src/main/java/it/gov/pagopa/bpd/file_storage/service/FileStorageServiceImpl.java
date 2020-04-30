@@ -30,6 +30,6 @@ class FileStorageServiceImpl extends BaseService implements FileStorageService {
         FileStorage file = fileStorageDAO.getFile(todayDate, type);
         if (file != null) {
             return file;
-        } else throw new FileStorageNotFoundException(type);
+        } else throw new FileStorageNotFoundException();
     }
 }
