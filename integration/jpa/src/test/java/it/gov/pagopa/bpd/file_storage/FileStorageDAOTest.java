@@ -25,7 +25,7 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
     }
 
     @Override
-    protected FileStorageDAO getCitizenDAO() {
+    protected FileStorageDAO getDao() {
         return fileStorageDAOMock;
     }
 
