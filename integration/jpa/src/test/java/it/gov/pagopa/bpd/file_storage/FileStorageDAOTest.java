@@ -14,7 +14,7 @@ import java.util.function.Function;
 public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileStorage, Long> {
 
     @Autowired
-    private FileStorageDAO fileStorageDAOMock;
+    private FileStorageDAO fileStorageDAO;
 
     @Override
     protected CriteriaQuery<? super FileStorage> getMatchAlreadySavedCriteria() {
@@ -26,7 +26,7 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
 
     @Override
     protected FileStorageDAO getDao() {
-        return fileStorageDAOMock;
+        return fileStorageDAO;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
         OffsetDateTime startDate = getStoredEntity().getStartDate();
         String type = getStoredEntity().getType();
         getStoredEntity().setEndDate(null);
-        final FileStorage entity = fileStorageDAOMock.getFile(startDate, type);
+        final FileStorage entity = fileStorageDAO.getFile(startDate, type);
 
         Assert.assertNotNull(entity);
         Assert.assertEquals(getStoredEntity(), entity);
@@ -64,7 +64,7 @@ public class FileStorageDAOTest extends BaseCrudJpaDAOTest<FileStorageDAO, FileS
     public void getFile_ko() {
         OffsetDateTime endDate = getStoredEntity().getEndDate();
         String type = getStoredEntity().getType();
-        final FileStorage entity = fileStorageDAOMock.getFile(endDate, type);
+        final FileStorage entity = fileStorageDAO.getFile(endDate, type);
 
         Assert.assertNull(entity);
         Assert.assertNotEquals(getStoredEntity(), entity);
