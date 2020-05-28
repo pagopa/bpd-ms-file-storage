@@ -1,7 +1,7 @@
 package it.gov.pagopa.bpd.file_storage.controller;
 
 import eu.sia.meda.core.controller.StatelessController;
-import it.gov.pagopa.bpd.file_storage.model.FileStorage;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.model.FileStorage;
 import it.gov.pagopa.bpd.file_storage.service.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;

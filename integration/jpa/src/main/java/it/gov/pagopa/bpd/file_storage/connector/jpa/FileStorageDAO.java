@@ -1,8 +1,8 @@
-package it.gov.pagopa.bpd.file_storage;
+package it.gov.pagopa.bpd.file_storage.connector.jpa;
 
 
-import eu.sia.meda.connector.jpa.CrudJpaDAO;
-import it.gov.pagopa.bpd.file_storage.model.FileStorage;
+import it.gov.pagopa.bpd.common.connector.jpa.CrudJpaDAO;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.model.FileStorage;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

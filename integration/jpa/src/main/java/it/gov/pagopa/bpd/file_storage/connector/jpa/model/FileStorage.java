@@ -1,7 +1,8 @@
-package it.gov.pagopa.bpd.file_storage.model;
+package it.gov.pagopa.bpd.file_storage.connector.jpa.model;
 
 
-import it.gov.pagopa.bpd.common.model.entity.BaseEntity;
+import it.gov.pagopa.bpd.common.connector.jpa.model.BaseEntity;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.FileStorageDAO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.io.Serializable;
 import java.time.OffsetDateTime;
 
 /**
- * See {@link it.gov.pagopa.bpd.file_storage.FileStorageDAO}
+ * See {@link FileStorageDAO}
  */
 @Entity
 @Data

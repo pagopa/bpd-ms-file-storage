@@ -1,8 +1,8 @@
 package it.gov.pagopa.bpd.file_storage.service;
 
-import it.gov.pagopa.bpd.file_storage.FileStorageDAO;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.FileStorageDAO;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.model.FileStorage;
 import it.gov.pagopa.bpd.file_storage.exception.FileStorageNotFoundException;
-import it.gov.pagopa.bpd.file_storage.model.FileStorage;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

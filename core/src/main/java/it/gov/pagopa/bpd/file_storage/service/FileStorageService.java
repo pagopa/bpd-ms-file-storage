@@ -1,7 +1,7 @@
 package it.gov.pagopa.bpd.file_storage.service;
 
 
-import it.gov.pagopa.bpd.file_storage.model.FileStorage;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.model.FileStorage;
 
 import java.time.OffsetDateTime;
 

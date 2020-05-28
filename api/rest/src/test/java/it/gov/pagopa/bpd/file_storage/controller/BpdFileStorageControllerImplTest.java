@@ -2,7 +2,7 @@ package it.gov.pagopa.bpd.file_storage.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.sia.meda.config.ArchConfiguration;
-import it.gov.pagopa.bpd.file_storage.model.FileStorage;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.model.FileStorage;
 import it.gov.pagopa.bpd.file_storage.service.FileStorageService;
 import org.junit.Assert;
 import org.junit.Test;

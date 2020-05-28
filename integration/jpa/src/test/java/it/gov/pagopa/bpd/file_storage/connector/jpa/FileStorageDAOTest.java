@@ -1,8 +1,8 @@
-package it.gov.pagopa.bpd.file_storage;
+package it.gov.pagopa.bpd.file_storage.connector.jpa;
 
 import eu.sia.meda.layers.connector.query.CriteriaQuery;
-import it.gov.pagopa.bpd.common.BaseCrudJpaDAOTest;
-import it.gov.pagopa.bpd.file_storage.model.FileStorage;
+import it.gov.pagopa.bpd.common.connector.jpa.BaseCrudJpaDAOTest;
+import it.gov.pagopa.bpd.file_storage.connector.jpa.model.FileStorage;
 import lombok.Data;
 import org.junit.Assert;
 import org.junit.Test;
