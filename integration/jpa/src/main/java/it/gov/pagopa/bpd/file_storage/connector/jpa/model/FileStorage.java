@@ -37,7 +37,7 @@ public class FileStorage extends BaseEntity implements Serializable {
     @Column(name = "type_t")
     private String type;
 
-    @Column(name = "fileName_t")
+    @Column(name = "filename_t")
     private String fileName;
 
     @Lob
